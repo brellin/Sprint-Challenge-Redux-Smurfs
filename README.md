@@ -22,9 +22,25 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+  1. `actions` are basically methods that have been extracted; they tell the `reducer` what they need to do.
+  1. `reducers` are fuelled by `actions`, returning a version of `state` that coincides with the `action` that initiated it.
+  1. The `store` incorporates `middleware`, `actions`, and `reducers` and is wrapped around the entirety of the app to ensure that every component has the capability to have access to every part of itself.
+    * The `store` will always return the same thing to every component that calls from it, therefore being a 'single source of truth' 
+
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  * Application state is global, accessible to every component
+    * A good time to use this would be to toggle a global boolean `isLoggedIn` or to update data `smurfData`.
+  * Component state is local to the individual component
+    * A good time to use this would be in instances specific to that particular component `handleChanges` or `updateSmurf`
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  * `redux-thunk` allows us to perform actions async - with `dispatch`, meaning that an action can be working in the background.
+
 
 ## Project Set Up
 
